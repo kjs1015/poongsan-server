@@ -11,9 +11,7 @@ app.get('/api/meal', async (req, res) => {
     if (!date) return res.status(400).json({ error: "날짜가 필요합니다." });
 
     // ⚠️ [체크!]여기에 따옴표 "" 가 깨지진 않았는지, 키 앞뒤로 띄어쓰기(공백)가 들어가진 않았는지 꼭 확인해줘!
-    const KEY = "
-c16796f70d5548eda72297864e079f4e
-"; 
+    const KEY = "c16796f70d5548eda72297864e079f4e"; 
     const url = `https://open.neis.go.kr/hub/mealServiceDietInfo?Type=json&ATPT_OFCDC_SC_CODE=R10&SD_SCHUL_CODE=8750475&MLSV_YMD=${date}&KEY=${KEY}`;
 
     try {

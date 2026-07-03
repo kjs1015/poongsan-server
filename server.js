@@ -10,8 +10,8 @@ app.get('/api/meal', async (req, res) => {
     const { date } = req.query;
     if (!date) return res.status(400).json({ error: "날짜(date) 파라미터가 필요합니다." });
 
-    // 🦅 경북교육청(R10) & 안동 풍산고등학교(8323114) 코드로 고정!
-    const url = `https://open.neis.go.kr/hub/mealServiceDietInfo?Type=json&ATPT_OFCDC_SC_CODE=R10&SD_SCHUL_CODE=8323114&MLSV_YMD=${date}`;
+    // 🦅 경북교육청(R10)과 안동 풍산고의 진짜 코드(8750475) 매칭 완료!
+    const url = `https://open.neis.go.kr/hub/mealServiceDietInfo?Type=json&ATPT_OFCDC_SC_CODE=R10&SD_SCHUL_CODE=8750475&MLSV_YMD=${date}`;
 
     try {
         const response = await axios.get(url);
